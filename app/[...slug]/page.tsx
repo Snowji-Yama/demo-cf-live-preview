@@ -1,10 +1,10 @@
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
-import {
-  useContentfulLiveUpdates,
-  ContentfulLivePreviewProvider
-} from "@contentful/live-preview/react";
+// import {
+//   useContentfulLiveUpdates,
+//   ContentfulLivePreviewProvider
+// } from "@contentful/live-preview/react";
 
 import { getCFClient } from "@/lib/contentfulClient";
 import { mapCharacter } from "@/lib/mapper";
