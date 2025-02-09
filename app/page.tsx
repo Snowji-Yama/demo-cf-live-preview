@@ -3,7 +3,7 @@ import { draftMode } from "next/headers";
 import { getCFClient } from "@/lib/contentfulClient";
 import { mapCharacters } from '@/lib/mapper';
 
-import Characters from "@/components/Characters";
+import Characters from "@/components/ui/Characters";
 
 const HomePage = async () => {
   const { isEnabled } = await draftMode();

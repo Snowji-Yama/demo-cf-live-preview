@@ -1,8 +1,8 @@
 import React from 'react'
+import Script from 'next/script';
 
 import "./globals.css";
-import Menu from '@/components/Menu';
-import Script from 'next/script'
+import Menu from '@/components/ui/Menu';
 
 export default function RootLayout({
   children,

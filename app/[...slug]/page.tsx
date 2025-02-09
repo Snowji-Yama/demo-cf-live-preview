@@ -1,15 +1,10 @@
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
-// import {
-//   useContentfulLiveUpdates,
-//   ContentfulLivePreviewProvider
-// } from "@contentful/live-preview/react";
-
 import { getCFClient } from "@/lib/contentfulClient";
-import { mapCharacter } from "@/lib/mapper";
 
-import Character from "@/components/Character";
+import CustomContentfulLivePreviewProdiver from '@/components/functionnal/CustomContentfulLivePreviewProdiver';
+import CharacterRenderer from '@/components/functionnal/CharacterRenderer'
 
 export interface CharacterPageProps {
   params: Promise<{
@@ -28,29 +23,18 @@ const CharacterPage = async (props: CharacterPageProps) => {
     content_type: "characters",
     "fields.slug[all]": slug
   });
+  const entry = entries.items[0];
 
-  if (!entries.items[0]) {
+  if (!entry) {
     notFound();
   }
 
-  // const updatedEntry = useContentfulLiveUpdates(entries.items[0]);
-
-  const character = mapCharacter(entries.items[0]);
-
   return (
-    // <ContentfulLivePreviewProvider
-    //   locale="en-US"
-    //   enableInspectorMode={isEnabled}
-    //   enableLiveUpdates={isEnabled}
-    // >
-      <Character
-        id={character.id}
-        name={character.name}
-        slug={character.slug}
-        image={character.image}
-        shortDescription={character.shortDescription}
-      />
-    // </ContentfulLivePreviewProvider>
+    <CustomContentfulLivePreviewProdiver
+      isEnabled={isEnabled}
+    >
+      <CharacterRenderer entry={entry} />
+    </CustomContentfulLivePreviewProdiver>
   );
 };
 

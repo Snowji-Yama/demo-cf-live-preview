@@ -1,4 +1,4 @@
-import CharacterCard, { CharacterCardProps } from "@/components/CharacterCard";
+import CharacterCard, { CharacterCardProps } from "@/components/ui/CharacterCard";
 
 export interface CharactersProps {
   characters: CharacterCardProps[];

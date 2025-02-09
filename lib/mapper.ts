@@ -1,7 +1,7 @@
 import { Entry } from 'contentful';
 
-import { CharacterProps } from '@/components/Character';
-import { CharacterCardProps } from '@/components/CharacterCard'
+import { CharacterProps } from '@/components/ui/Character';
+import { CharacterCardProps } from '@/components/ui/CharacterCard'
 
 export const mapCharacter = (entry: Entry): CharacterProps => {
   return {
